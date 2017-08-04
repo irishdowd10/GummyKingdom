@@ -1,19 +1,22 @@
-﻿@{
-	ViewData["Title"] = "Gummi Kingdom";
+﻿@model IEnumerable<GummyKingdom.Models.Product>
+@{
+	ViewData["Title"] = "Gummy Kingdom";
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@model IEnumerable<GummyKingdom.Models.Product>
 
 
-	<h2>Gummy Bear Kingdom</h2>
-	<h4>@Html.DisplayNameFor(model => model.Name)</h4>
+
+	<h2>Our Products</h2>
+	
 	<ul>
 		@foreach (var listProduct in Model)
 		{
 			<li>
-				@Html.DisplayFor(modelProduct => listProduct.Name)
-				@Html.ActionLink("Details", "Details", new { id = listProduct.ProductId })
+				@Html.DisplayFor(modelProduct => listProduct.Name) 
+				| @Html.ActionLink("Details", "Details", new { id = listProduct.ProductId })
+				| @Html.ActionLink("Edit", "Edit", new { id = listProduct.ProductId })
+				| @Html.ActionLink("Delete", "Delete", new { id = listProduct.ProductId })
 			</li>
 		}
 	</ul>

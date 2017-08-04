@@ -1,9 +1,10 @@
-﻿@{
-	ViewData["Title"] = "Gummi Kingdom";
+﻿@model GummyKingdom.Models.Product
+
+@{
+	ViewData["Title"] = "Gummy Kingdom";
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@model  GummyKingdom.Models.Product
 
 
 	<h2>Edit</h2>
@@ -23,8 +24,6 @@
 		@Html.LabelFor(model => model.Country)
 		@Html.TextBoxFor(model => model.Country)
 
-		<label>Image</label>
-		@Html.EditorFor(model => model.Image)
 
 		<input type="submit" value="Save" />
 	}
