@@ -1,0 +1,34 @@
+﻿@model  GummyKingdom.Models.Product
+
+<html>
+<head>
+	<title>Gummy Kingdom - Edit</title>
+</head>
+<body>
+
+	<h2>Edit</h2>
+	<hr />
+	<h4>Edit this task: @Html.DisplayFor(model => model.Name)</h4>
+
+	@using (Html.BeginForm())
+	{
+		@Html.HiddenFor(model => model.ProductId)
+
+		@Html.LabelFor(model => model.Name)
+		@Html.TextBoxFor(model => model.Name)
+
+		@Html.LabelFor(model => model.Cost)
+		@Html.TextBoxFor(model => model.Cost)
+
+		@Html.LabelFor(model => model.Country)
+		@Html.TextBoxFor(model => model.Country)
+
+		<label>Image</label>
+		@Html.EditorFor(model => model.Image)
+
+		<input type="submit" value="Save" />
+	}
+	<p>@Html.ActionLink("Back to list", "Index")</p>
+
+</body>
+</html>
