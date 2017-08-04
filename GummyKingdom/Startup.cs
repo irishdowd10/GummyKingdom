@@ -27,7 +27,7 @@ namespace GummyKingdom
 
 		public void ConfigureServices(IServiceCollection services)
 		{
-
+			services.AddMvc();
 			services.AddEntityFramework()
 				.AddDbContext<GummyKingdomDbContext>(options =>
 					options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
@@ -43,6 +43,12 @@ namespace GummyKingdom
 				app.UseDeveloperExceptionPage();
 			}
 
+			app.UseMvc(routes =>
+			{
+				routes.MapRoute(
+					name: "default",
+					template: "{controller=Home}/{action=Index}/{id?}");
+			});
 
 			app.Run(async (context) =>
 			{
