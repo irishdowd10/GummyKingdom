@@ -1,10 +1,10 @@
-﻿@model  GummyKingdom.Models.Product
+﻿@{
+	ViewData["Title"] = "Gummi Kingdom";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-<html>
-<head>
-	<title>Gummy Kingdom - Edit</title>
-</head>
-<body>
+@model  GummyKingdom.Models.Product
+
 
 	<h2>Edit</h2>
 	<hr />
@@ -30,5 +30,3 @@
 	}
 	<p>@Html.ActionLink("Back to list", "Index")</p>
 
-</body>
-</html>
