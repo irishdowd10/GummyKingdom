@@ -11,9 +11,15 @@ namespace GummyKingdom.Controllers
     public class ProductsController : Controller
     {
 		private GummyKingdomDbContext db = new GummyKingdomDbContext();
+
 		public IActionResult Index()
         {
             return View(db.Products.ToList());
         }
-    }
+		public IActionResult Details(int id)
+		{
+			var thisProduct = db.Products.FirstOrDefault(products => products.ProductId == id);
+			return View(thisProduct);
+		}
+	}
 }
