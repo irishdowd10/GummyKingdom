@@ -6,18 +6,33 @@
 
 
 
+<div class="container">
+	<h4>Our Products</h4>
 
-	<h2>Our Products</h2>
-	
-	<ul>
-		@foreach (var listProduct in Model)
-		{
-			<li>
-				@Html.DisplayFor(modelProduct => listProduct.Name) 
-				| @Html.ActionLink("Details", "Details", new { id = listProduct.ProductId })
-				| @Html.ActionLink("Edit", "Edit", new { id = listProduct.ProductId })
-				| @Html.ActionLink("Delete", "Delete", new { id = listProduct.ProductId })
-			</li>
-		}
-	</ul>
+
+	<table class="table">
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Name)
+			</th>
+			<th></th>
+		</tr>
+
+		<ul>
+			@foreach (var listProduct in Model)
+			{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelProduct => listProduct.Name)
+				</td>
+				<td>
+					| @Html.ActionLink("Details", "Details", new { id = listProduct.ProductId })
+					| @Html.ActionLink("Edit", "Edit", new { id = listProduct.ProductId })
+					| @Html.ActionLink("Delete", "Delete", new { id = listProduct.ProductId })
+				</td>
+			</tr>
+			}
+	</table>
+
 	<p>@Html.ActionLink("Add new item", "Create")</p>
+</div>

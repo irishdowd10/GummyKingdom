@@ -6,18 +6,14 @@
 }
 
 
-<html>
-<head>
-	<title>Gummy Kingdom</title>
-</head>
-<body>
 
-	<h2>Details for: @Html.DisplayFor(model => model.Name)</h2>
+<div class="container">
+	<h4>Details for: @Html.DisplayFor(model => model.Name)</h4>
 
-	<h3> @Html.DisplayNameFor(model => model.Name) : @Html.DisplayFor(model => model.Cost)</h3>
-	<h3> @Html.DisplayNameFor(model => model.Cost) : @Html.DisplayFor(model => model.Cost)</h3>
-	<h3>@Html.DisplayNameFor(model => model.Country): @Html.DisplayFor(model => model.Country)</h3>
+	<h5> @Html.DisplayNameFor(model => model.Name) : @Html.DisplayFor(model => model.Name)</h5>
+	<h5>@Html.DisplayNameFor(model => model.Cost) : $ @Html.DisplayFor(model => model.Cost)</h5>
+	<h5>@Html.DisplayNameFor(model => model.Country): @Html.DisplayFor(model => model.Country)</h5>
 
-	<p>@Html.ActionLink("Back to list", "Index")</p>
-</body>
-</html>
+	<p>@Html.ActionLink("Back to products", "Index")</p>
+
+</div>
